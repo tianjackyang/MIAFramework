@@ -1,5 +1,4 @@
 #import "NSString+SLMFramework.h"
-#import "SLMFramework.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (SLMFramework)

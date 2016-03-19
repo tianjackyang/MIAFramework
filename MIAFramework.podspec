@@ -137,16 +137,21 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
 
   s.subspec 'UIKit+MIAFramework' do |ss|
+    ss.dependency 'MIAFramework/FunctionsAndMethods'
+    ss.dependency 'MIAFramework/Foundation+MIAFramework'
     ss.source_files = 'Pod/UIKit+MIAFramework/**/*.{h,m}'
-    ss.dependency 'Pod/FunctionsAndMethods'
+    ss.public_header_files = 'Pod/UIKit+MIAFramework/*.h'
   end	
 
- s.subspec 'FunctionsAndMethods' do |ss|
-   ss.source_files = 'Pod/FunctionsAndMethods/**/*.{h,m}'
- end
- s.subspec 'Foundation+MIAFramework' do |ss|
-   ss.source_files = 'Pod/Foundation+MIAFramework/**/*.{h,m}'
-   ss.dependency 'Pod/FunctionsAndMethods'
- end 
+  s.subspec 'FunctionsAndMethods' do |ss|
+    ss.source_files = 'Pod/FunctionsAndMethods/**/*.{h,m}'
+    ss.public_header_files = 'Pod/FunctionsAndMethods/*.h'
+  end
+
+  s.subspec 'Foundation+MIAFramework' do |ss|
+    ss.dependency 'MIAFramework/FunctionsAndMethods'
+    ss.source_files = 'Pod/Foundation+MIAFramework/**/*.{h,m}'
+    ss.public_header_files = 'Pod/Foundation+MIAFramework/*.h'
+  end 
   
 end
