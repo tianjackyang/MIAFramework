@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MIAFramework"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "use for common operation."
 
   # This description is used to generate tags and improve search results.
@@ -26,6 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
 			*common operation
+                        *catagory from uikit
                    DESC
 
   s.homepage     = "https://github.com/tianjackyang/MIAFramework"
@@ -137,14 +138,15 @@ Pod::Spec.new do |s|
 
   s.subspec 'UIKit+MIAFramework' do |ss|
     ss.source_files = 'Pod/UIKit+MIAFramework/**/*.{h,m}'
+    ss.dependency 'Pod/FunctionsAndMethods'
   end	
 
  s.subspec 'FunctionsAndMethods' do |ss|
-   ss.source_files = 'Pod/FunctionsAdnMethods/**/*.{h,m}'
+   ss.source_files = 'Pod/FunctionsAndMethods/**/*.{h,m}'
  end
-
  s.subspec 'Foundation+MIAFramework' do |ss|
    ss.source_files = 'Pod/Foundation+MIAFramework/**/*.{h,m}'
+   ss.dependency 'Pod/FunctionsAndMethods'
  end 
   
 end
